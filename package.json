@@ -1,0 +1,32 @@
+{
+    "name": "onboard",
+    "version": "0.1.0",
+    "main": "src/app.js",
+    "private": true,
+    "author": "Nick Williams <hello@smartcar.com>",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rogwilco/smartcarapp.git"
+    },
+    "keywords": [
+        "smartcar",
+        "connected car"
+    ],
+    "engines": {
+        "node": ">=4.0.0"
+    },
+    "scripts": {
+        "start": "node ngrok.js",
+        "lint": "eslint . --cache",
+        "jsdoc": "jsdoc -c .jsdocrc ."
+    },
+    "dependencies": {
+        "express": "^4.16.2"
+    },
+    "devDependencies": {
+        "eslint": "^3.12.2",
+        "eslint-config-smartcar": "^2.0.0",
+        "ngrok": "^2.2.26",
+        "nodemon": "^1.15.1"
+    }
+}
