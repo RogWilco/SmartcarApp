@@ -26,6 +26,7 @@
     "devDependencies": {
         "eslint": "^3.12.2",
         "eslint-config-smartcar": "^2.0.0",
+        "jsdoc": "^3.5.5",
         "ngrok": "^2.2.26",
         "nodemon": "^1.15.1"
     }
