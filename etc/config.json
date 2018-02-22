@@ -1,8 +1,11 @@
 {
+    "hooks": {
+        "secret": "{/.secret.hooks}"
+    },
     "smartcar": {
         "client": {
             "id": "66f498e1-9447-4333-a0c2-1889909c1b44",
-            "secret": ""
+            "secret": "{/.secret.api}"
         },
         "api": {
             "version": "1.0",
