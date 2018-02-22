@@ -27,7 +27,9 @@ router.get('/oauth', (req, res) => {
 router.get('/notify', (req, res) => {
     // Validate Callback Request
 
+    console.log('INCOMING');
 
+    console.log(req);
 
 });
 
