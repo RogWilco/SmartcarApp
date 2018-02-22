@@ -1,8 +1,10 @@
 'use strict';
 
 const express = require('express');
-const router = express.Router();
+const endpoint = express.Router();
 const bodyParser = require('body-parser');
+
+endpoint.use(bodyParser.json());
 
 /**
  * OAuth 2.0 callback endpoint.
@@ -12,7 +14,7 @@ const bodyParser = require('body-parser');
  *
  * @return {void}
  */
-router.get('/oauth', (req, res) => {
+endpoint.get('/oauth', (req, res) => {
 
 });
 
@@ -24,11 +26,11 @@ router.get('/oauth', (req, res) => {
  *
  * @return {void}
  */
-router.get('/notify', (req, res) => {
+endpoint.get('/notify', (req, res) => {
     // Validate Callback Request
 
 
 
 });
 
-module.exports = router;
+module.exports = endpoint;

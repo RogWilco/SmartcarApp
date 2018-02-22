@@ -1,18 +1,22 @@
 'use strict';
 
-const express 		= require('express');
-const router		= express.Router();
-const bodyParser	= require('body-parser');
-const hooks			= require('./hooks');
-
-// Parse request bodies as JSON.
-router.use(bodyParser.json());
+const _ = require('lodash');
+const express = require('express');
+const bodyParser = require('body-parser');
+const endpointConfig = require('./endpoints/config');
+const endpointReports = require('./endpoints/reports');
+const endpointHooks = require('./endpoints/hooks');
 
 // Initialize Application
 var app = express();
 
+// Parse request bodies as JSON.
+app.use(bodyParser.json());
+
 // Configure Routes
-app.use('/hooks', hooks);
+app.use('/config', endpointConfig);
+app.use('/reports', endpointReports);
+app.use('/hooks', endpointHooks);
 
 /**
  * Root endpoint.
@@ -25,30 +29,6 @@ app.use('/hooks', hooks);
 app.get('/', (req, res) => {
   res.sendStatus(200);
 	// Show status?
-});
-
-/**
- * View current configuration.
- *
- * @param {express.request} req the HTTP request object
- * @param {express.response} res the HTTP response object
- *
- * @return void
- */
-app.get('/config', (req, res) => {
-
-});
-
-/**
- * Set configuration values.
- *
- * @param {express.request} req the HTTP request object
- * @param {express.response} res the HTTP response object
- *
- * @return void
- */
-app.post('/config', (req, res) => {
-
 });
 
 module.exports = app;
