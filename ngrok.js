@@ -2,13 +2,13 @@
 
 const nodemon = require('nodemon');
 const ngrok = require('ngrok');
+const fs = require('fs');
 
-ngrok.connect(8080, (err, url) => {
+ngrok.connect(8000, (err, url) => {
   if (err) {
-    console.error('Error opening ngrok tunnel', err);
     process.exit(1);
   } else {
-    console.log('Ngrok tunnel opened at ' + url);
+    fs.writeFile('.meta.webhooks.url', url);
     nodemon(`-x 'NGROK_URL=${url} node' ./server.js`);
   }
 });
